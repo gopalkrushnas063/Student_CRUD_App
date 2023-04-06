@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -39,6 +40,17 @@ public class StudentServiceImpl implements StudentServices{
         existingStudent.setAddress(student.getAddress());
         if(existingStudent != null){
             return studentRepo.save(existingStudent);
+        }
+        throw new StudentException("Student does not exist with Student ID : "+id);
+    }
+
+    @Override
+    public String  deleteByID(Long id) throws StudentException {
+        Optional<Student> existingStudent = studentRepo.findById(id);
+
+        if(existingStudent.isPresent()){
+            studentRepo.deleteById(id);
+            return "Student Data Deleted Successfully";
         }
         throw new StudentException("Student does not exist with Student ID : "+id);
     }

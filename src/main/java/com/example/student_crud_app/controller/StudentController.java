@@ -37,4 +37,10 @@ public class StudentController {
         Student students = studentService.updateStudentByID(id,student);
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteStudentBYIDHandler(@PathVariable("id") Long id) throws StudentException{
+        String res = studentService.deleteByID(id);
+        return new ResponseEntity<>(res, HttpStatus.OK);
+    }
 }
