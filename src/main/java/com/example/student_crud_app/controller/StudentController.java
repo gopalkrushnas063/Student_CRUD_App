@@ -31,4 +31,10 @@ public class StudentController {
         List<Student> students = studentService.getAllStudent();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudentBYIDHandler(@PathVariable("id") Long id,Student student) throws StudentException{
+        Student students = studentService.updateStudentByID(id,student);
+        return new ResponseEntity<>(students, HttpStatus.OK);
+    }
 }

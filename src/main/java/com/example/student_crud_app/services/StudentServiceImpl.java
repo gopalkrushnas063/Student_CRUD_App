@@ -28,4 +28,18 @@ public class StudentServiceImpl implements StudentServices{
         }
         return studentList;
     }
+
+    @Override
+    public Student updateStudentByID(Long id, Student student) throws StudentException {
+        Student existingStudent = studentRepo.findById(id).get();
+        existingStudent.setFirstName(student.getFirstName());
+        existingStudent.setLastName(student.getLastName());
+        existingStudent.setStandard(student.getStandard());
+        existingStudent.setEmail(student.getEmail());
+        existingStudent.setAddress(student.getAddress());
+        if(existingStudent != null){
+            return studentRepo.save(existingStudent);
+        }
+        throw new StudentException("Student does not exist with Student ID : "+id);
+    }
 }
