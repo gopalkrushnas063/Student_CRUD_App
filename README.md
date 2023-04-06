@@ -96,7 +96,7 @@ Overall, a CRUD student management system built with Spring Boot provides a robu
 
  <h3 id="installation-run">Installation &amp; Run</h3>
     <ul>
-        <li>Before running the API server, you should update the database config inside the <a href="https://github.com/gopalkrushnas063/Insurance_Management_System/blob/main/Insurance_Management_System/src/main/resources/application.properties">application.properties</a>
+        <li>Before running the API server, you should update the database config inside the <a href="https://github.com/gopalkrushnas063/Student_CRUD_App/blob/master/src/main/resources/application.properties">application.properties</a>
             file.</li>
         <li>Update the port number, username and password as per your local database config.</li>
     </ul>
@@ -105,7 +105,7 @@ Overall, a CRUD student management system built with Spring Boot provides a robu
             server.port=<span class="hljs-number">8080</span>
             <br>
             #database specific properties
-            spring<span>.datasource</span><span>.url</span>=jdbc:mysql:<span>//localhost:3306/insuranceManagementDB;</span>
+            spring<span>.datasource</span><span>.url</span>=jdbc:mysql:<span>//localhost:3306/student;</span>
             spring<span>.datasource</span><span>.driver-class-name</span>=com<span>.mysql</span><span>.cj</span><span>.jdbc</span><span>.Driver</span>
             spring<span>.datasource</span><span>.username</span>=root
             spring<span>.datasource</span><span>.password</span>=root
