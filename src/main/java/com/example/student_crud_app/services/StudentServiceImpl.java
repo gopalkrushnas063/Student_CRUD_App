@@ -54,4 +54,15 @@ public class StudentServiceImpl implements StudentServices{
         }
         throw new StudentException("Student does not exist with Student ID : "+id);
     }
+
+    @Override
+    public Student getStudentByID(Long id) throws StudentException {
+
+        Optional<Student> student = studentRepo.findById(id);
+
+        if(student.isPresent()){
+            return student.get();
+        }
+        throw new StudentException("Student does not exist with Student ID : "+id);
+    }
 }

@@ -10,4 +10,5 @@ public interface StudentServices {
     public List<Student> getAllStudent() throws StudentException;
     public Student updateStudentByID(Long id, Student student) throws StudentException;
     public String  deleteByID(Long id) throws StudentException;
+    public Student  getStudentByID(Long id) throws StudentException;
 }

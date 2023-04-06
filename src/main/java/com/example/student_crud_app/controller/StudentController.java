@@ -43,4 +43,10 @@ public class StudentController {
         String res = studentService.deleteByID(id);
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Student> getStudentBYIDHandler(@PathVariable("id") Long id) throws StudentException{
+        Student res = studentService.getStudentByID(id);
+        return new ResponseEntity<>(res, HttpStatus.OK);
+    }
 }
